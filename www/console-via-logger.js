@@ -71,6 +71,12 @@ console.log = function() {
 };
 
 //------------------------------------------------------------------------------
+console.logOrigin = function() {
+    if (logger.useConsole()) return;
+    logger.log.apply(logger, [].slice.call(arguments));
+};
+
+//------------------------------------------------------------------------------
 console.error = function() {
     if (logger.useConsole()) return;
     logger.error.apply(logger, [].slice.call(arguments));
